@@ -1,3 +1,6 @@
 ---
 Name: goldfinch-component-products
 ---
+Goldfinch\Component\Products\Admin\ProductsAdmin:
+  extensions:
+    - Goldfinch\Helpers\Extensions\BlocksAdminExtension
