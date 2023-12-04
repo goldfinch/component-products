@@ -2,13 +2,15 @@
 
 namespace Goldfinch\Component\Products\Models\Nest;
 
-use Goldfinch\Component\Products\Pages\Nest\Products;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\TextField;
+use SilverStripe\Control\Director;
 use SilverStripe\TagField\TagField;
-use Goldfinch\Component\Products\Models\Nest\ProductCategory;
 use Goldfinch\Nest\Models\NestedObject;
+use Goldfinch\Component\Products\Admin\ProductsAdmin;
+use Goldfinch\Component\Products\Pages\Nest\Products;
 use Goldfinch\FocusPointExtra\Forms\UploadFieldWithExtra;
+use Goldfinch\Component\Products\Models\Nest\ProductCategory;
 
 class ProductItem extends NestedObject
 {
@@ -85,6 +87,29 @@ class ProductItem extends NestedObject
         );
 
         return $fields;
+    }
+
+    // TODO: check if SortOrder exists
+    public function nextItem()
+    {
+        return ProductItem::get()->filter(['SortOrder:LessThan' => $this->SortOrder])->Sort('SortOrder DESC')->first();
+    }
+
+    // TODO: check if SortOrder exists
+    public function previousItem()
+    {
+        return ProductItem::get()->filter(['SortOrder:GreaterThan' => $this->SortOrder])->first();
+    }
+
+    public function OtherItems()
+    {
+        return ProductItem::get()->filter('ID:not', $this->ID)->limit(6);
+    }
+
+    public function CMSEditLink()
+    {
+        $admin = new ProductsAdmin;
+        return Director::absoluteBaseURL() . '/' . $admin->getCMSEditLinkForManagedDataObject($this);
     }
 
     // public function validate()
