@@ -1,0 +1,11 @@
+---
+Name: goldfinch-component-products-sortable
+---
+
+Goldfinch\Component\Products\Models\Nest\ProductItem:
+  extensions:
+    - Goldfinch\Helpers\Extensions\DataObjectSortable
+
+Goldfinch\Component\Products\Models\Nest\ProductCategory:
+  extensions:
+    - Goldfinch\Helpers\Extensions\DataObjectSortable
