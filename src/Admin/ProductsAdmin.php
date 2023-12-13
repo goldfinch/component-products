@@ -16,7 +16,7 @@ class ProductsAdmin extends ModelAdmin
 
     private static $url_segment = 'products';
     private static $menu_title = 'Products';
-    private static $menu_icon_class = 'bi-box2-fill';
+    private static $menu_icon_class = 'font-icon-block-accordion';
     // private static $menu_priority = -0.5;
 
     private static $managed_models = [
