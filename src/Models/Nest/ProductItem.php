@@ -86,6 +86,8 @@ class ProductItem extends NestedObject
             ]
         );
 
+        $fields->dataFieldByName('Image')->setFolderName('products');
+
         return $fields;
     }
 
