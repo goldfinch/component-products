@@ -9,7 +9,7 @@ use SilverStripe\TagField\TagField;
 use Goldfinch\Nest\Models\NestedObject;
 use Goldfinch\Component\Products\Admin\ProductsAdmin;
 use Goldfinch\Component\Products\Pages\Nest\Products;
-use Goldfinch\FocusPointExtra\Forms\UploadFieldWithExtra;
+use Goldfinch\ImageEditor\Forms\EditableUploadField;
 use Goldfinch\Component\Products\Models\Nest\ProductCategory;
 
 class ProductItem extends NestedObject
@@ -78,7 +78,7 @@ class ProductItem extends NestedObject
         $fields->addFieldsToTab(
             'Root.Main',
             [
-                ...UploadFieldWithExtra::create('Image', 'Image', $fields, $this)->getFields(),
+                ...EditableUploadField::create('Image', 'Image', $fields, $this)->getFields(),
                 ...[
                     TextField::create('Title', 'Title'),
                     TagField::create('Categories', 'Categories', ProductCategory::get())
