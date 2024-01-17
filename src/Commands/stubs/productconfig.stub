@@ -1,0 +1,19 @@
+---
+Name: app-{{ class }}
+After: "goldfinch/component-products"
+---
+Goldfinch\Component\Products\Models\Nest\ProductItem:
+  extensions:
+    - {{ namespace }}\ProductItemExtension
+
+Goldfinch\Component\Products\Models\Nest\ProductCategory:
+  extensions:
+    - {{ namespace }}\ProductCategoryExtension
+
+Goldfinch\Component\Products\Configs\ProductConfig:
+  extensions:
+    - {{ namespace }}\ProductConfigExtension
+
+Goldfinch\Component\Products\Blocks\ProductsBlock:
+  extensions:
+    - {{ namespace }}\ProductsBlockExtension
