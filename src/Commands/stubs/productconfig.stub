@@ -4,16 +4,16 @@ After: "goldfinch/component-products"
 ---
 Goldfinch\Component\Products\Models\Nest\ProductItem:
   extensions:
-    - {{ namespace_root }}ProductItemExtension
+    - {{ namespace_root_extensions }}ProductItemExtension
 
 Goldfinch\Component\Products\Models\Nest\ProductCategory:
   extensions:
-    - {{ namespace_root }}ProductCategoryExtension
+    - {{ namespace_root_extensions }}ProductCategoryExtension
 
 Goldfinch\Component\Products\Configs\ProductConfig:
   extensions:
-    - {{ namespace_root }}ProductConfigExtension
+    - {{ namespace_root_extensions }}ProductConfigExtension
 
 Goldfinch\Component\Products\Blocks\ProductsBlock:
   extensions:
-    - {{ namespace_root }}ProductsBlockExtension
+    - {{ namespace_root_extensions }}ProductsBlockExtension
