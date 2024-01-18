@@ -5,10 +5,10 @@ namespace Goldfinch\Component\Products\Commands;
 use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
-#[AsCommand(name: 'config:component-products')]
+#[AsCommand(name: 'vendor:component-products:config')]
 class ComponentProductsConfigCommand extends GeneratorCommand
 {
-    protected static $defaultName = 'config:component-products';
+    protected static $defaultName = 'vendor:component-products:config';
 
     protected $description = 'Create component-products config';
 

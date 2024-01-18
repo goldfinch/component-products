@@ -5,10 +5,10 @@ namespace Goldfinch\Component\Products\Commands;
 use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
-#[AsCommand(name: 'vendor:component-products-productsblock')]
+#[AsCommand(name: 'vendor:component-products:productsblock')]
 class ProductsBlockExtensionCommand extends GeneratorCommand
 {
-    protected static $defaultName = 'vendor:component-products-productsblock';
+    protected static $defaultName = 'vendor:component-products:productsblock';
 
     protected $description = 'Create ProductsBlock extension';
 
