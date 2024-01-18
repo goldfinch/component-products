@@ -20,16 +20,16 @@ class ProductsAdmin extends ModelAdmin
 
     private static $managed_models = [
         ProductItem::class => [
-            'title'=> 'Products',
+            'title' => 'Products',
         ],
         ProductCategory::class => [
-            'title'=> 'Categories',
+            'title' => 'Categories',
         ],
         ProductsBlock::class => [
-            'title'=> 'Blocks',
+            'title' => 'Blocks',
         ],
         ProductConfig::class => [
-            'title'=> 'Settings',
+            'title' => 'Settings',
         ],
     ];
 }

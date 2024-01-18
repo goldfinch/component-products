@@ -4,18 +4,16 @@ Name: goldfinch-component-products
 Goldfinch\Component\Products\Admin\ProductsAdmin:
   extensions:
     - Goldfinch\Helpers\Extensions\BlocksAdminExtension
-
 ---
 Name: goldfinch-component-products-icon
 Only:
-  moduleexists: 'goldfinch/enchantment'
+  moduleexists: "goldfinch/enchantment"
 ---
-
 Goldfinch\Component\Products\Admin\ProductsAdmin:
-  menu_icon_class: 'bi-box2-fill'
+  menu_icon_class: "bi-box2-fill"
 
 Goldfinch\Component\Products\Pages\Nest\Products:
-  icon_class: 'bi-box2-fill'
+  icon_class: "bi-box2-fill"
 
 Goldfinch\Component\Products\Blocks\ProductsBlock:
-  icon: 'bi-box2-fill'
+  icon: "bi-box2-fill"
