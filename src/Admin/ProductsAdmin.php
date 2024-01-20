@@ -32,4 +32,25 @@ class ProductsAdmin extends ModelAdmin
             'title' => 'Settings',
         ],
     ];
+
+    public function getManagedModels()
+    {
+        $models = parent::getManagedModels();
+
+        $cfg = ProductConfig::current_config();
+
+        if ($cfg->DisabledCategories) {
+            unset($models[ProductCategory::class]);
+        }
+
+        if (!class_exists('DNADesign\Elemental\Models\BaseElement')) {
+            unset($models[ProductsBlock::class]);
+        }
+
+        if (empty($cfg->config('db')->db)) {
+            unset($models[ProductConfig::class]);
+        }
+
+        return $models;
+    }
 }

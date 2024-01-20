@@ -9,6 +9,7 @@ use Goldfinch\Nest\Models\NestedObject;
 use Goldfinch\Harvest\Traits\HarvestTrait;
 use Goldfinch\Component\Products\Admin\ProductsAdmin;
 use Goldfinch\Component\Products\Pages\Nest\Products;
+use Goldfinch\Component\Products\Configs\ProductConfig;
 
 class ProductItem extends NestedObject
 {
@@ -58,6 +59,12 @@ class ProductItem extends NestedObject
         ]);
 
         $harvest->dataField('Image')->setFolderName('products');
+
+        $cfg = ProductConfig::current_config();
+
+        if ($cfg->DisabledCategories) {
+            $harvest->remove('Categories');
+        }
     }
 
     public function getNextItem()
