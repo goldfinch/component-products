@@ -5,10 +5,10 @@ namespace Goldfinch\Component\Products\Commands;
 use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
-#[AsCommand(name: 'vendor:component-products:productcategory')]
+#[AsCommand(name: 'vendor:component-products:ext:category')]
 class ProductCategoryExtensionCommand extends GeneratorCommand
 {
-    protected static $defaultName = 'vendor:component-products:productcategory';
+    protected static $defaultName = 'vendor:component-products:ext:category';
 
     protected $description = 'Create ProductCategory extension';
 
@@ -16,7 +16,7 @@ class ProductCategoryExtensionCommand extends GeneratorCommand
 
     protected $type = 'component-products category extension';
 
-    protected $stub = 'productcategory-extension.stub';
+    protected $stub = './stubs/productcategory-extension.stub';
 
     protected $prefix = 'Extension';
 

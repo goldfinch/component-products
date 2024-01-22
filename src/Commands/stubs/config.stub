@@ -1,0 +1,34 @@
+---
+Name: app-{{ class }}
+After: "goldfinch/component-products"
+---
+Goldfinch\Component\Products\Admin\ProductsAdmin:
+  # menu_icon_class: ""
+  extensions:
+    - {{ namespace_root_extensions }}ProductsAdminExtension
+
+Goldfinch\Component\Products\Pages\Nest\Products:
+  # icon_class: ""
+  extensions:
+    - {{ namespace_root_extensions }}ProductsExtension
+
+Goldfinch\Component\Products\Controllers\Nest\ProductsController:
+  extensions:
+    - {{ namespace_root_extensions }}ProductsControllerExtension
+
+Goldfinch\Component\Products\Configs\ProductConfig:
+  extensions:
+    - {{ namespace_root_extensions }}ProductConfigExtension
+
+Goldfinch\Component\Products\Blocks\ProductsBlock:
+  # icon: ""
+  extensions:
+    - {{ namespace_root_extensions }}ProductsBlockExtension
+
+Goldfinch\Component\Products\Models\Nest\ProductItem:
+  extensions:
+    - {{ namespace_root_extensions }}ProductItemExtension
+
+Goldfinch\Component\Products\Models\Nest\ProductCategory:
+  extensions:
+    - {{ namespace_root_extensions }}ProductCategoryExtension
