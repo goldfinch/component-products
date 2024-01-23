@@ -3,6 +3,7 @@ Name: app-{{ class }}
 After: "goldfinch/component-products"
 ---
 Goldfinch\Component\Products\Admin\ProductsAdmin:
+  # menu_priority: 1
   # menu_icon_class: ""
   extensions:
     - {{ namespace_root_extensions }}ProductsAdminExtension
