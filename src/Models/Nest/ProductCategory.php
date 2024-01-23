@@ -5,6 +5,7 @@ namespace Goldfinch\Component\Products\Models\Nest;
 use Goldfinch\Harvest\Harvest;
 use Goldfinch\Nest\Models\NestedObject;
 use Goldfinch\Harvest\Traits\HarvestTrait;
+use Goldfinch\Component\Products\Pages\Nest\ProductsByCategory;
 
 class ProductCategory extends NestedObject
 {
@@ -12,7 +13,7 @@ class ProductCategory extends NestedObject
 
     public static $nest_up = null;
     public static $nest_up_children = [];
-    public static $nest_down = null;
+    public static $nest_down = ProductsByCategory::class;
     public static $nest_down_parents = [];
 
     private static $table_name = 'ProductCategory';
