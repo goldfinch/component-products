@@ -2,15 +2,15 @@
 
 namespace Goldfinch\Component\Products\Blocks;
 
-use Goldfinch\Harvest\Harvest;
-use Goldfinch\Harvest\Traits\HarvestTrait;
+use Goldfinch\Fielder\Fielder;
+use Goldfinch\Fielder\Traits\FielderTrait;
 use DNADesign\Elemental\Models\BaseElement;
 use Goldfinch\Component\Products\Models\Nest\ProductItem;
 use Goldfinch\Component\Products\Models\Nest\ProductCategory;
 
 class ProductsBlock extends BaseElement
 {
-    use HarvestTrait;
+    use FielderTrait;
 
     private static $table_name = 'ProductsBlock';
     private static $singular_name = 'Products';
@@ -22,7 +22,7 @@ class ProductsBlock extends BaseElement
     private static $description = '';
     private static $icon = 'font-icon-block-accordion';
 
-    public function harvest(Harvest $harvest): void
+    public function fielder(Fielder $fielder): void
     {
         // ..
     }

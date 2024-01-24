@@ -2,18 +2,18 @@
 
 namespace Goldfinch\Component\Products\Models\Nest;
 
-use Goldfinch\Harvest\Harvest;
+use Goldfinch\Fielder\Fielder;
 use SilverStripe\Assets\Image;
 use SilverStripe\Control\Director;
 use Goldfinch\Nest\Models\NestedObject;
-use Goldfinch\Harvest\Traits\HarvestTrait;
+use Goldfinch\Fielder\Traits\FielderTrait;
 use Goldfinch\Component\Products\Admin\ProductsAdmin;
 use Goldfinch\Component\Products\Pages\Nest\Products;
 use Goldfinch\Component\Products\Configs\ProductConfig;
 
 class ProductItem extends NestedObject
 {
-    use HarvestTrait;
+    use FielderTrait;
 
     public static $nest_up = null;
     public static $nest_up_children = [];
@@ -48,25 +48,25 @@ class ProductItem extends NestedObject
         'Image.CMSThumbnail' => 'Image',
     ];
 
-    public function harvest(Harvest $harvest): void
+    public function fielder(Fielder $fielder): void
     {
-        $harvest->require(['Title']);
+        $fielder->require(['Title']);
 
-        $harvest->fields([
+        $fielder->fields([
             'Root.Main' => [
-                $harvest->string('Title'),
-                $harvest->html('Content'),
-                $harvest->tag('Categories'),
-                ...$harvest->media('Image'),
+                $fielder->string('Title'),
+                $fielder->html('Content'),
+                $fielder->tag('Categories'),
+                ...$fielder->media('Image'),
             ],
         ]);
 
-        $harvest->dataField('Image')->setFolderName('products');
+        $fielder->dataField('Image')->setFolderName('products');
 
         $cfg = ProductConfig::current_config();
 
         if ($cfg->DisabledCategories) {
-            $harvest->remove('Categories');
+            $fielder->remove('Categories');
         }
     }
 
