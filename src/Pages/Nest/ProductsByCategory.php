@@ -7,7 +7,7 @@ use Goldfinch\Component\Products\Controllers\Nest\ProductsByCategoryController;
 
 class ProductsByCategory extends Nest
 {
-    private static $table_name = 'Products';
+    private static $table_name = 'ProductsByCategory';
 
     private static $controller_name = ProductsByCategoryController::class;
 
