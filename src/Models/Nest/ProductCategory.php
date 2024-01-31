@@ -3,13 +3,14 @@
 namespace Goldfinch\Component\Products\Models\Nest;
 
 use Goldfinch\Fielder\Fielder;
+use Goldfinch\Mill\Traits\Millable;
 use Goldfinch\Nest\Models\NestedObject;
 use Goldfinch\Fielder\Traits\FielderTrait;
 use Goldfinch\Component\Products\Pages\Nest\ProductsByCategory;
 
 class ProductCategory extends NestedObject
 {
-    use FielderTrait;
+    use FielderTrait, Millable;
 
     public static $nest_up = null;
     public static $nest_up_children = [];
@@ -20,7 +21,9 @@ class ProductCategory extends NestedObject
     private static $singular_name = 'category';
     private static $plural_name = 'categories';
 
-    private static $db = [];
+    private static $db = [
+        'Content' => 'HTMLText',
+    ];
 
     private static $belongs_many_many = [
         'Items' => ProductItem::class,
@@ -31,7 +34,28 @@ class ProductCategory extends NestedObject
         $fielder->require(['Title']);
 
         $fielder->fields([
-            'Root.Main' => [$fielder->string('Title')],
+            'Root.Main' => [
+                $fielder->string('Title'),
+                $fielder->html('Content'),
+            ],
         ]);
+    }
+
+    public function List()
+    {
+        // pagi/loadable ?
+
+        return $this->Items();
+    }
+
+    public function OtherCategories($type = 'mix', $limit = 6, $escapeEmpty = true)
+    {
+        $filter = ['ID:not' => $this->ID];
+
+        if ($escapeEmpty) {
+            $filter['Items.Count():GreaterThan'] = 0;
+        }
+
+        return ProductCategory::get()->filter($filter)->shuffle()->limit($limit);
     }
 }

@@ -22,8 +22,10 @@ class ProductsTemplatesCommand extends GeneratorCommand
 
         if (is_string($theme)) {
 
-            $componentPath = BASE_PATH . '/vendor/goldfinch/component-products/templates/Goldfinch/Component/Products/';
-            $themePath = 'themes/' . $theme . '/templates/Goldfinch/Component/Products/';
+            $componentPathTemplates = BASE_PATH . '/vendor/goldfinch/component-products/templates/';
+            $componentPath = $componentPathTemplates . 'Goldfinch/Component/Products/';
+            $themeTemplates = 'themes/' . $theme . '/templates/';
+            $themePath = $themeTemplates . 'Goldfinch/Component/Products/';
 
             $files = [
                 [
@@ -35,8 +37,28 @@ class ProductsTemplatesCommand extends GeneratorCommand
                     'to' => $themePath . 'Models/Nest/ProductItem.ss',
                 ],
                 [
+                    'from' => $componentPath . 'Models/Nest/ProductCategory.ss',
+                    'to' => $themePath . 'Models/Nest/ProductCategory.ss',
+                ],
+                [
                     'from' => $componentPath . 'Pages/Nest/Products.ss',
                     'to' => $themePath . 'Pages/Nest/Products.ss',
+                ],
+                [
+                    'from' => $componentPath . 'Pages/Nest/ProductsByCategory.ss',
+                    'to' => $themePath . 'Pages/Nest/ProductsByCategory.ss',
+                ],
+                [
+                    'from' => $componentPath . 'Partials/ProductFilter.ss',
+                    'to' => $themePath . 'Partials/ProductFilter.ss',
+                ],
+                [
+                    'from' => $componentPathTemplates . 'Loadable/Goldfinch/Component/Products/Models/Nest/ProductCategory.ss',
+                    'to' => $themeTemplates . 'Loadable/Goldfinch/Component/Products/Models/Nest/ProductCategory.ss',
+                ],
+                [
+                    'from' => $componentPathTemplates . 'Loadable/Goldfinch/Component/Products/Models/Nest/ProductItem.ss',
+                    'to' => $themeTemplates . 'Loadable/Goldfinch/Component/Products/Models/Nest/ProductItem.ss',
                 ],
             ];
 

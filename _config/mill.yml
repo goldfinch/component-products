@@ -1,0 +1,10 @@
+---
+Name: goldfinch-component-products-mill
+After: "goldfinch/mill"
+---
+Goldfinch\Mill\Mill:
+  millable:
+    Goldfinch\Component\Products\Mills\ProductsMill: Goldfinch\Component\Products\Pages\Nest\Products
+    Goldfinch\Component\Products\Mills\ProductsByCategoryMill: Goldfinch\Component\Products\Pages\Nest\ProductsByCategory
+    Goldfinch\Component\Products\Mills\ProductCategoryMill: Goldfinch\Component\Products\Models\Nest\ProductCategory
+    Goldfinch\Component\Products\Mills\ProductItemMill: Goldfinch\Component\Products\Models\Nest\ProductItem

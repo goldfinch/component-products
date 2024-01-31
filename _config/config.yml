@@ -15,5 +15,8 @@ Goldfinch\Component\Products\Admin\ProductsAdmin:
 Goldfinch\Component\Products\Pages\Nest\Products:
   icon_class: "bi-box2-fill"
 
+Goldfinch\Component\Products\Pages\Nest\ProductsByCategory:
+  icon_class: "bi-box2"
+
 Goldfinch\Component\Products\Blocks\ProductsBlock:
   icon: "bi-box2-fill"
