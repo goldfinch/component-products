@@ -13,8 +13,8 @@ Goldfinch\Component\Products\Pages\Nest\Products:
   extensions:
     - {{ namespace_root_extensions }}ProductsExtension
 
-Goldfinch\Component\Products\Pages\Nest\ProductsByCategory:
-  # icon_class: ""
+# Goldfinch\Component\Products\Pages\Nest\ProductsByCategory:
+#   icon_class: ""
 
 Goldfinch\Component\Products\Controllers\Nest\ProductsController:
   extensions:
