@@ -25,7 +25,7 @@ class ProductsHarvest extends Harvest
 
         ProductCategory::mill(5)->make();
 
-        ProductItem::mill(20)->make()->each(function($item) {
+        ProductItem::mill(30)->make()->each(function($item) {
             $categories = ProductCategory::get()->shuffle()->limit(rand(0,4));
 
             foreach ($categories as $category) {
