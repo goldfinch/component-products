@@ -29,7 +29,11 @@ class ProductCategory extends NestedObject
         'Items' => ProductItem::class,
     ];
 
-    private static $searchableListFields = [
+    private static $summary_fields = [
+        'Items.Count' => 'Products',
+    ];
+
+    private static $searchable_list_fields = [
         'Title', 'Content',
     ];
 
