@@ -3,6 +3,7 @@
 namespace Goldfinch\Component\Products\Blocks;
 
 use Goldfinch\Fielder\Fielder;
+use Goldfinch\Mill\Traits\Millable;
 use Goldfinch\Fielder\Traits\FielderTrait;
 use DNADesign\Elemental\Models\BaseElement;
 use Goldfinch\Component\Products\Models\Nest\ProductItem;
@@ -10,7 +11,7 @@ use Goldfinch\Component\Products\Models\Nest\ProductCategory;
 
 class ProductsBlock extends BaseElement
 {
-    use FielderTrait;
+    use FielderTrait, Millable;
 
     private static $table_name = 'ProductsBlock';
     private static $singular_name = 'Products';

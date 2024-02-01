@@ -8,3 +8,4 @@ Goldfinch\Mill\Mill:
     Goldfinch\Component\Products\Mills\ProductsByCategoryMill: Goldfinch\Component\Products\Pages\Nest\ProductsByCategory
     Goldfinch\Component\Products\Mills\ProductCategoryMill: Goldfinch\Component\Products\Models\Nest\ProductCategory
     Goldfinch\Component\Products\Mills\ProductItemMill: Goldfinch\Component\Products\Models\Nest\ProductItem
+    Goldfinch\Component\Products\Mills\ProductsBlockMill: Goldfinch\Component\Products\Blocks\ProductsBlock
