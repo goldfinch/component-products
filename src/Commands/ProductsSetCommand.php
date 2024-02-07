@@ -17,57 +17,32 @@ class ProductsSetCommand extends GeneratorCommand
 
     protected function execute($input, $output): int
     {
-        $command = $this->getApplication()->find(
-            'vendor:component-products:ext:admin',
-        );
-        $input = new ArrayInput(['name' => 'ProductsAdmin']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-products:ext:admin');
+        $command->run(new ArrayInput(['name' => 'ProductsAdmin']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-products:ext:config',
-        );
-        $input = new ArrayInput(['name' => 'ProductConfig']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-products:ext:config');
+        $command->run(new ArrayInput(['name' => 'ProductConfig']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-products:ext:block',
-        );
-        $input = new ArrayInput(['name' => 'ProductsBlock']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-products:ext:block');
+        $command->run(new ArrayInput(['name' => 'ProductsBlock']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-products:ext:page',
-        );
-        $input = new ArrayInput(['name' => 'Products']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-products:ext:page');
+        $command->run(new ArrayInput(['name' => 'Products']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-products:ext:controller',
-        );
-        $input = new ArrayInput(['name' => 'ProductsController']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-products:ext:controller');
+        $command->run(new ArrayInput(['name' => 'ProductsController']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-products:ext:item',
-        );
-        $input = new ArrayInput(['name' => 'ProductItem']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-products:ext:item');
+        $command->run(new ArrayInput(['name' => 'ProductItem']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-products:ext:category',
-        );
-        $input = new ArrayInput(['name' => 'ProductCategory']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-products:ext:category');
+        $command->run(new ArrayInput(['name' => 'ProductCategory']), $output);
 
         $command = $this->getApplication()->find('vendor:component-products:config');
-        $input = new ArrayInput(['name' => 'component-products']);
-        $command->run($input, $output);
+        $command->run(new ArrayInput(['name' => 'component-products']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-products:templates',
-        );
-        $input = new ArrayInput([]);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-products:templates');
+        $command->run(new ArrayInput([]), $output);
 
         return Command::SUCCESS;
     }
