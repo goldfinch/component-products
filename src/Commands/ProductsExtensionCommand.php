@@ -17,5 +17,5 @@ class ProductsExtensionCommand extends GeneratorCommand
 
     protected $stub = './stubs/products-extension.stub';
 
-    protected $prefix = 'Extension';
+    protected $suffix = 'Extension';
 }
