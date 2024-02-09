@@ -3,11 +3,11 @@
 namespace Goldfinch\Component\Products\Blocks;
 
 use Goldfinch\Fielder\Fielder;
-use Goldfinch\Blocks\Models\BlockElement;
+use DNADesign\Elemental\Models\BaseElement;
 use Goldfinch\Component\Products\Models\Nest\ProductItem;
 use Goldfinch\Component\Products\Models\Nest\ProductCategory;
 
-class ProductsBlock extends BlockElement
+class ProductsBlock extends BaseElement
 {
     private static $table_name = 'ProductsBlock';
     private static $singular_name = 'Products';
@@ -16,7 +16,7 @@ class ProductsBlock extends BlockElement
     private static $db = [];
 
     private static $inline_editable = false;
-    private static $description = '';
+    private static $description = 'Products block handler';
     private static $icon = 'font-icon-block-accordion';
 
     public function Items()

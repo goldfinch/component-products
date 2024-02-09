@@ -4,6 +4,10 @@ Name: goldfinch-component-products
 Goldfinch\Component\Products\Admin\ProductsAdmin:
   extensions:
     - Goldfinch\Helpers\Extensions\BlocksAdminExtension
+
+Goldfinch\Component\Products\Blocks\ProductsBlock:
+  extensions:
+    - Goldfinch\Helpers\Extensions\BaseElementExtension
 ---
 Name: goldfinch-component-products-icon
 Only:
