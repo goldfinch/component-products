@@ -4,11 +4,14 @@ namespace Goldfinch\Component\Products\Blocks;
 
 use Goldfinch\Fielder\Fielder;
 use DNADesign\Elemental\Models\BaseElement;
+use Goldfinch\Helpers\Traits\BaseElementTrait;
 use Goldfinch\Component\Products\Models\Nest\ProductItem;
 use Goldfinch\Component\Products\Models\Nest\ProductCategory;
 
 class ProductsBlock extends BaseElement
 {
+    use BaseElementTrait;
+
     private static $table_name = 'ProductsBlock';
     private static $singular_name = 'Products';
     private static $plural_name = 'Products';
