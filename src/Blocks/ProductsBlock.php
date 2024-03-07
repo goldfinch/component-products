@@ -2,7 +2,6 @@
 
 namespace Goldfinch\Component\Products\Blocks;
 
-use Goldfinch\Fielder\Fielder;
 use DNADesign\Elemental\Models\BaseElement;
 use Goldfinch\Helpers\Traits\BaseElementTrait;
 use Goldfinch\Component\Products\Models\Nest\ProductItem;

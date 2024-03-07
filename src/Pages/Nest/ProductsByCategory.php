@@ -2,16 +2,14 @@
 
 namespace Goldfinch\Component\Products\Pages\Nest;
 
-use Goldfinch\Fielder\Fielder;
 use Goldfinch\Nest\Pages\Nest;
 use Goldfinch\Mill\Traits\Millable;
-use Goldfinch\Fielder\Traits\FielderTrait;
 use Goldfinch\Component\Products\Models\Nest\ProductCategory;
 use Goldfinch\Component\Products\Controllers\Nest\ProductsByCategoryController;
 
 class ProductsByCategory extends Nest
 {
-    use FielderTrait, Millable;
+    use Millable;
 
     private static $table_name = 'ProductsByCategory';
 
@@ -25,18 +23,28 @@ class ProductsByCategory extends Nest
 
     private static $description = 'Nested pseudo page, to display individual categories. Can only be added within Products page as a child page';
 
-    public function fielder(Fielder $fielder): void
+    public function getCMSFields()
     {
+        $fields = parent::getCMSFields();
+
+        $fielder = $fields->fielder($this);
+
         $fielder->remove([
             'Content',
             'MenuTitle',
         ]);
 
         $fielder->description('Title', 'Does not show up anywhere except SiteTree in the CMS');
+
+        return $fields;
     }
 
-    public function fielderSettings(Fielder $fielder): void
+    public function getSettingsFields()
     {
+        $fields = parent::getSettingsFields();
+
+        $fielder = $fields->fielder($this);
+
         if ($this->NestedPseudo) {
             $fielder->removeFieldsInTab('Root.Search');
             $fielder->removeFieldsInTab('Root.General');
@@ -44,6 +52,8 @@ class ProductsByCategory extends Nest
         }
 
         $fielder->disable(['NestedObject']); // NestedPseudo
+
+        return $fields;
     }
 
     protected function onBeforeWrite()
